@@ -11,3 +11,4 @@ serde     = { workspace = true }
 uuid      = { workspace = true }
 chrono    = { workspace = true }
 thiserror = { workspace = true }
+blake3    = { workspace = true }

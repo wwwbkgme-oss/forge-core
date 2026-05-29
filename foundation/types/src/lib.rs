@@ -18,6 +18,11 @@ pub mod rng;
 pub mod tick;
 pub mod world;
 
+/// Conformance version — bump when any canonical type, serialisation format,
+/// or RNG algorithm changes.  All federated repos must match this version in
+/// their conformance test runs.
+pub const CONFORMANCE_VERSION: u32 = 1;
+
 // ── Flat re-exports ───────────────────────────────────────────────────────────
 pub use agent::{Agent, AgentCapability, AgentKind, AgentState, FreeProvider};
 pub use error::{ForgeError, ForgeResult};
