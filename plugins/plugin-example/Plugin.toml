@@ -1,0 +1,12 @@
+[plugin]
+id          = "forgefabrik.example-v1"
+version     = "0.1.0"
+name        = "ForgeFabrik Example Plugin"
+description = "Reference cdylib template. Copy and rename to create a new plugin."
+
+[capabilities]
+provides = ["agent"]
+requires = []
+
+[entry]
+lib = "libplugin_example.so"

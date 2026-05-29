@@ -149,6 +149,39 @@ Every repo must have:
 | Event equality | Equal events produce equal state |
 | Snapshot roundtrip | Serialize → deserialize → assert_eq! |
 
+Reference implementation: `domain/kernel/tests/mandatory.rs` in this repo.
+Copy or adapt for each federated repo.
+
+---
+
+## CQRS Contracts (`domain/kernel`)
+
+forge-core ships the canonical CQRS trait contracts in `domain/kernel`:
+
+| Trait | Purpose |
+|---|---|
+| `Reducer<S,E>` | Pure `(state, event) → state`. Deterministic. |
+| `CommandHandler<S,C,E>` | Validate command, emit events. |
+| `AggregateRoot` | Combines both; provides `replay()`. |
+| `DeterministicHash` | Hex state hash — feeds `WorldSnapshot.state_hash`. |
+
+Each federated repo re-implements these traits locally (no import from forge-core).
+
+---
+
+## Plugin ABI (`runtime/plugin`)
+
+forge-core ships the canonical plugin runtime in `runtime/plugin`:
+
+| Item | Description |
+|---|---|
+| `ABI_VERSION = 1` | Frozen — increment only on breaking change. |
+| `FfPluginCtx` / `FfPluginInfo` | C-ABI structs (`#[repr(C)]`). |
+| `export_plugin!` | Generates `ff_plugin_info/init/tick/shutdown`. |
+| `parse_manifest()` | Parses `Plugin.toml` → `PluginManifest`. |
+
+See `plugins/plugin-example/` for a complete cdylib reference template.
+
 ---
 
 ## Sync Strategy

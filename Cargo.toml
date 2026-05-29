@@ -16,6 +16,9 @@ members = [
     "foundation/events",      # WorldEvent envelope + EventStore trait
     "foundation/contracts",   # trait definitions: AgentDriver, PluginHost, …
     "conformance",            # test vector suite — copy to federated repos
+    "domain/kernel",          # Reducer, CommandHandler, AggregateRoot, DeterministicHash
+    "runtime/plugin",         # ff_plugin_* ABI, Plugin.toml parser, export_plugin! macro
+    "plugins/plugin-example", # reference cdylib template
 ]
 resolver = "2"
 
@@ -35,6 +38,8 @@ thiserror    = "2"
 async-trait  = "0.1"
 tokio        = { version = "1", features = ["full"] }
 blake3       = "1"
+toml         = "0.8"
+tempfile     = "3"
 
 # Internal
 types     = { path = "foundation/types" }

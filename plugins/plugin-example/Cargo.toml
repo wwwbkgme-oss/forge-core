@@ -1,0 +1,11 @@
+[package]
+name        = "plugin-example"
+version.workspace = true
+edition.workspace = true
+description = "ForgeFabrik canonical plugin template — copy and rename to create a new plugin."
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+plugin = { path = "../../runtime/plugin" }

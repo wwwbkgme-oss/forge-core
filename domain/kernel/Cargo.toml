@@ -1,0 +1,12 @@
+[package]
+name        = "kernel"
+version.workspace = true
+edition.workspace = true
+description = "ForgeFabrik domain kernel — Reducer, CommandHandler, AggregateRoot, DeterministicHash."
+
+[dependencies]
+types  = { workspace = true }
+events = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }
