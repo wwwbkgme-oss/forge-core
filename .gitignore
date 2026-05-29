@@ -1,0 +1,7 @@
+/target
+# Cargo.lock is tracked — this workspace produces no binary but tracking
+# it pins the exact dependency graph for reproducible CI.
+*.so
+*.dylib
+*.dll
+.env

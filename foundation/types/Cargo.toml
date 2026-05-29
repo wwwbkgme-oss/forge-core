@@ -1,0 +1,13 @@
+[package]
+name        = "types"
+description = "forge-core: canonical primitive types — no I/O, no logic."
+version.workspace     = true
+edition.workspace     = true
+license.workspace     = true
+
+# ── Layer rule: foundation/types knows nothing above itself ──────────────────
+[dependencies]
+serde     = { workspace = true }
+uuid      = { workspace = true }
+chrono    = { workspace = true }
+thiserror = { workspace = true }

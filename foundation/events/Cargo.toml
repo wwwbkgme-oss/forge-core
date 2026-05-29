@@ -1,0 +1,16 @@
+[package]
+name        = "events"
+description = "forge-core: canonical WorldEvent envelope and EventStore trait."
+version.workspace     = true
+edition.workspace     = true
+license.workspace     = true
+
+[dependencies]
+types      = { workspace = true }
+serde      = { workspace = true }
+serde_json = { workspace = true }
+uuid       = { workspace = true }
+chrono     = { workspace = true }
+thiserror  = { workspace = true }
+async-trait = { workspace = true }
+tokio      = { workspace = true }
