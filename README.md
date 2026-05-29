@@ -42,12 +42,12 @@ AGENTS.md      Instructions for AI agents in the federation
 
 ## Federated repos
 
-| Repo | Role |
-|---|---|
-| **forge-core** | This repo — canonical definitions |
-| [ff-one](https://github.com/wwwbkgme-oss/ff-one) | Runtime MMO — voxel world engine |
-| [ff-two](https://github.com/wwwbkgme-oss/ff-two) | DevStudio — multi-agent software creation |
-| [ff-three](https://github.com/wwwbkgme-oss/ff-three) | Academy — event-sourced educational simulation |
+| Repo | Role | Production highlights |
+|---|---|---|
+| **forge-core** | Canonical kernel | LlmDriver, ForgeFabrikPlugin, TickContext, CQRS kernel |
+| [ff-one](https://github.com/wwwbkgme-oss/ff-one) | MMO World Engine (Voxel, BLAKE3) | EventLog, Sandbox Snapshot/Restore, 8 LLM-Drivers, CI |
+| [ff-two](https://github.com/wwwbkgme-oss/ff-two) | Multi-Agent Software Dev | PostgresStore, RedisQueue, DockerSandbox, JWT Auth, Prometheus |
+| [ff-three](https://github.com/wwwbkgme-oss/ff-three) | Event-sourced Academy Sim | PgEventStore, Tick/Projection Workers, 18 tests, CI |
 
 ---
 
