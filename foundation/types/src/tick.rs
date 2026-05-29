@@ -15,11 +15,25 @@ pub struct WorldTick(pub u64);
 impl WorldTick {
     pub const ZERO: Self = Self(0);
 
+    /// Advance by `delta` ticks.  Wraps on `u64::MAX` overflow (practically
+    /// unreachable at 1 Hz: 2⁶⁴ ticks ≈ 585 billion years of simulation time).
     pub fn advance(self, delta: u64) -> Self {
-        Self(self.0 + delta)
+        Self(self.0.wrapping_add(delta))
     }
     pub fn elapsed_since(self, earlier: Self) -> u64 {
         self.0.saturating_sub(earlier.0)
+    }
+}
+
+impl From<u64> for WorldTick {
+    fn from(t: u64) -> Self {
+        Self(t)
+    }
+}
+
+impl From<WorldTick> for u64 {
+    fn from(t: WorldTick) -> u64 {
+        t.0
     }
 }
 

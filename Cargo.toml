@@ -15,6 +15,7 @@ members = [
     "foundation/types",       # canonical primitives: WorldTick, WorldSnapshot, …
     "foundation/events",      # WorldEvent envelope + EventStore trait
     "foundation/contracts",   # trait definitions: AgentDriver, PluginHost, …
+    "conformance",            # test vector suite — copy to federated repos
 ]
 resolver = "2"
 

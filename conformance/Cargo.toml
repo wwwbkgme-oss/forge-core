@@ -1,0 +1,17 @@
+[package]
+name        = "conformance"
+description = "forge-core: canonical test vector suite for the ForgeFabrik federation."
+version.workspace     = true
+edition.workspace     = true
+license.workspace     = true
+
+# This crate has no production code — only test vectors and conformance helpers.
+# Federated repos (ff-one, ff-two, ff-three) copy the test bodies and run them
+# against their own implementations to verify conformance.
+
+[dependencies]
+types      = { workspace = true }
+events     = { workspace = true }
+serde      = { workspace = true }
+serde_json = { workspace = true }
+uuid       = { workspace = true }
